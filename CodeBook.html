@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Coursera - Getting and Cleaning Data May 2014 - Course Project - Code Book</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Coursera - Getting and Cleaning Data May 2014 - Course Project - Code Book</h1>
+
+<h2>Raw data</h2>
+
+<p>Human Activity Recognition Using Smartphones Dataset</p>
+
+<p>Version 1.0</p>
+
+<p>Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.</p>
+
+<p>Smartlab - Non Linear Complex Systems Laboratory</p>
+
+<p>DITEN - Università degli Studi di Genova.</p>
+
+<p>Via Opera Pia 11A, I-16145, Genoa, Italy.</p>
+
+<p><a href="mailto:activityrecognition@smartlab.ws">activityrecognition@smartlab.ws</a></p>
+
+<p><a href="http://www.smartlab.ws">www.smartlab.ws</a></p>
+
+<p>A full description is available at the site where the data was obtained: 
+<a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones">http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones</a> </p>
+
+<h2>Variables in raw data</h2>
+
+<p>In the original dataset observations for 30 volunteers were split into test (30%) and train (70%) datasets.For each subject, measurements were taken in fixed-width
+sliding windows of 2.56 sec and 50% overlap while wearing a smartphone Samsung
+Galaxy S II on the waist.</p>
+
+<p>Under the experiment, six activities were observed: WALKING, WALKING_UPSTAIRS,
+WALKING_DOWNSTAIRS, SITTING, STANDING and LAYING. 561 features were generated for
+every observation. </p>
+
+<h2>Transformations</h2>
+
+<p>We performed the following transformations:</p>
+
+<ol>
+<li><p>Merged test and train data sets and attached feature names to appropriate 
+column names and subject and activity identifiers to appropriate rows.</p></li>
+<li><p>Limited the list of features to means and standard deviations of each 
+measurements by subsetting the columns that contain &ldquo;mean&rdquo; or &ldquo;std&rdquo; as part of 
+the original name.</p></li>
+<li><p>Replaced numerical codes with descriptive activity names, per activity_label.txt in the original dataset.</p></li>
+<li><p>Ensured that the column labels (i.e. feature names) have desciptive names, in
+particular, eliminated all human-error duplicates in names.</p></li>
+<li><p>Produced a separate dataset tidydata.txt containing only the averages of each variable for each activity and each subject.</p></li>
+</ol>
+
+</body>
+
+</html>
+
